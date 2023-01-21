@@ -4,7 +4,8 @@ import TextField from '../../Components/TextField'
 import CheckBox from '../../Components/CheckBox'
 import Button from '../../Components/Button'
 import OrLine from '../../Components/OrLine'
-import { Link } from 'react-router-dom'
+import * as yup from 'yup'
+import { NavLink } from 'react-router-dom'
 
 export default function Index() {
 
@@ -24,13 +25,30 @@ export default function Index() {
     const onRememberMeClick = () => {
         setRememberMeChack(!(rememberMeChack));
     }
-    const onLoginSubmit = (event) => {
-        event.preventDefault()
+
+    let schema = yup.object().shape({
+        username: yup.string().required().min(3).max(15),
+        password: yup.string().matches("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$", "Write password in right form")
+    });
+
+    const onLoginSubmit = (e) => {
+        e.preventDefault()
+        try {
+            schema.validateSync({
+                username: username,
+                password: password,
+            },
+                { abortEarly: false })
+        } catch (error) {
+            console.log(error?.errors)
+
+        }
     }
 
 
+
     return (
-        <LoginFormContainer>
+        <LoginFormContainer onSubmit={onLoginSubmit}>
             <LoginFormHeader>Sign in</LoginFormHeader>
             <TextField
                 minLength={6}
@@ -66,9 +84,9 @@ export default function Index() {
             </AnotherLoginButtons>
             <RegisterOption >
                 {`Don’t have an account?`}
-                <Link to="/register" style={{ textDecoration: 'none' }} >
+                <NavLink to="register" style={{ textDecoration: 'none' }} >
                     <RegisterOptionButton>Register Now</RegisterOptionButton>
-                </Link>
+                </NavLink>
             </RegisterOption>
         </LoginFormContainer>
     )

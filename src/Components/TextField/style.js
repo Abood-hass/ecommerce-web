@@ -53,7 +53,7 @@ align-items: center;
 
 export const SelectList = styled.select`
 min-width: 33%;
-height: 26px;
+height: 27px;
 outline:none;
 border: 1px solid #E0E0E0;
 border-width: 1px 0px 1px 1px;

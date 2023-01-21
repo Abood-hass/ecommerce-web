@@ -19,6 +19,9 @@ export default function Index(props) {
     const [eyeClosed, setEyeClosed] = useState(props.type === "password" || false)
     const [errorFlag, setErrorFlag] = useState(false)
 
+    const Tels = [{ type: "WAT", num: "056" }, { type: "JWA", num: "059" }]
+
+
     const onShowPassword = () => {
         setEyeClosed(!eyeClosed)
     }
@@ -27,11 +30,9 @@ export default function Index(props) {
         setErrorFlag((props.minLength > event.target.value.length))
     }
 
-    const Tels = [
-        { type: "WAT", num: "056" }, { type: "JWA", num: "059" }]
-
     const inputTag = (<TextFieldInput
         minLength={props.minLength}
+        maxLength={props.maxLength}
         value={props.value}
         onChange={onChange}
         placeholder={props.placeholder || "Enter Username"}
@@ -62,7 +63,7 @@ export default function Index(props) {
             {props.type === "tel" ?
                 <TelephonFieldContainer >
                     <SelectList>
-                        {Tels.map((val, ind) => <option selected key={ind}>{val.type + " " + val.num}</option>)}
+                        {Tels.map((val, ind) => <option value={val.num} key={ind}>{val.type + " " + val.num}</option>)}
                     </SelectList>
                     {inputTag}
                 </TelephonFieldContainer > :

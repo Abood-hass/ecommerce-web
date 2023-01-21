@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { LightBlue } from "../ColorSchema";
 
-export const LoginFormContainer = styled.form`
+export const LoginFormContainer = styled.form` 
     display: flex;
     flex-direction: column;
     background: #fff;
     padding: 20px;
+    justify-content: space-around;
     border-radius: 6px;
     width: 300px;
     min-height: 430px; 
@@ -13,6 +14,11 @@ export const LoginFormContainer = styled.form`
     box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.3); 
     margin-top: -10px; 
     gap: 15px;
+     @media (max-width: 360px ) and ( max-height: 650px) {
+        height: 100%; 
+        width: 100%;
+        margin-top: 0px;
+    }
 `
 
 
