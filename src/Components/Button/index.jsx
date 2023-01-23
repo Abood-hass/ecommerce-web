@@ -10,7 +10,7 @@ export default function Index(props) {
 
         <ButtonContainer
             disabled={props.loading}
-            style={{ background: props.BG, color: props.labelColor }}
+            style={{ background: props.BG, color: props.labelColor, ...(props.style) }}
             onClick={props.onClick}>
 
             {props.loading && <LoadingIndicator />}

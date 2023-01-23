@@ -2,12 +2,10 @@ import styled from "styled-components";
 import LogoImg from '../../Assest/Images/main-logo-64.png'
 
 export const LogoContainer = styled.div`
+    user-select:none;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100px;
-    margin:auto;
-    height: 40px; 
+    align-items: center; 
+    gap:10px;
 `
 
 export const LogoImgContainer = styled.img.attrs(_ => ({
