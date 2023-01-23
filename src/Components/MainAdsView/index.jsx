@@ -1,13 +1,15 @@
 import React from 'react'
 import {
     DiscountsViewGroup,
+    DiscountsViewItem,
     MainAdsViewContainer,
     MainAdsViewItemViewedBox,
     MainAdsViewItemViewedContainer,
     MainAdsViewItemViewedImage,
     MainAdsViewList,
     MainAdsViewListItem,
-    MainAdsViewListItemText
+    MainAdsViewListItemText,
+    Startup
 } from './style'
 
 import { useState } from 'react';
@@ -25,7 +27,6 @@ export default function Index() {
     return (
         <MainAdsViewContainer>
             <MainAdsViewList >
-
                 {adsItem.map((item, index) =>
                     <MainAdsViewListItem onClick={() => setCurrentImage(index)} key={item.name} style={(index === currentImage) ? SelectedStyle : {}}>
                         <MainAdsViewListItemText children={item.name} />
@@ -36,7 +37,11 @@ export default function Index() {
                 <MainAdsViewItemViewedBox text1={adsItem[currentImage].header} text2={adsItem[currentImage].body} />
             </MainAdsViewItemViewedContainer>
 
-            <DiscountsViewGroup>a</DiscountsViewGroup>
+            <DiscountsViewGroup>
+                <Startup />
+                <DiscountsViewItem children={'Get US $10 off with a new supplier'} />
+                <DiscountsViewItem children={'Send quotes with supplier preferences'} />
+            </DiscountsViewGroup>
         </MainAdsViewContainer>
     )
 }

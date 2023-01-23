@@ -1,12 +1,12 @@
-import AutomobilesImage from '../../Assest/Images/AdImageNum1.png';
-import ClothesAndWear from '../../Assest/Images/AdImageNum2.png';
-import HomeInteriors from '../../Assest/Images/AdImageNum3.png';
-import ComputerAndTech from '../../Assest/Images/AdImageNum4.png';
-import ToolsAndEquipments from '../../Assest/Images/AdImageNum5.png';
-import SportsAndOutdoor from '../../Assest/Images/AdImageNum6.png';
-import AnimalAndPets from '../../Assest/Images/AdImageNum7.png';
-import MachineryTools from '../../Assest/Images/AdImageNum8.png';
-import MoreCategory from '../../Assest/Images/AdImageNum9.png';
+import AutomobilesImage from '../../Assest/Images/AdSlider/AdImageNum1.png';
+import ClothesAndWear from '../../Assest/Images/AdSlider/AdImageNum2.png';
+import HomeInteriors from '../../Assest/Images/AdSlider/AdImageNum3.png';
+import ComputerAndTech from '../../Assest/Images/AdSlider/AdImageNum4.png';
+import ToolsAndEquipments from '../../Assest/Images/AdSlider/AdImageNum5.png';
+import SportsAndOutdoor from '../../Assest/Images/AdSlider/AdImageNum6.png';
+import AnimalAndPets from '../../Assest/Images/AdSlider/AdImageNum7.png';
+import MachineryTools from '../../Assest/Images/AdSlider/AdImageNum8.png';
+import MoreCategory from '../../Assest/Images/AdSlider/AdImageNum9.png';
 
 export const adsItem = [
     { img: AutomobilesImage, name: "Automobiles", header: "Latest trending", body: "Automobiles items" },

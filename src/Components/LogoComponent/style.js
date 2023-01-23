@@ -6,6 +6,7 @@ export const LogoContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     width: 100px;
+    margin:auto;
     height: 40px; 
 `
 

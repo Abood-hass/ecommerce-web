@@ -1,10 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { LightBlue } from "../ColorSchema";
+import Avatar from '../../Assest/Images/icon-account-50.png'
 
 export const MainAdsViewContainer = styled.div`
-display:flex;
-    min-height: 55vh;
+    display:flex;
+    height: 400px;
     width:100%;
     background: #fff;
     border-radius: 6px;
@@ -18,7 +19,7 @@ export const MainAdsViewList = styled.div`
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-    width: 20%;
+    width: 30%;
     gap: 5px;
     background: #fff;
 `
@@ -50,20 +51,18 @@ export const MainAdsViewListItemText = styled.span`
 export const MainAdsViewItemViewedContainer = styled.div`
     position:relative;
     max-height: 410px;
-    width: 800px;
+    margin:auto;
+    width: 80%;
     object-fit: cover;
     
 `
 export const MainAdsViewItemViewedImage = styled.img`
-&:hover{
-    transform:scale(1.1);
-}   
-overflow:hidden;
+    background:gray;
     transition: all 300ms;
-    height: 410px;
+    max-height: 384px;
     width: 800px;
     object-fit: cover;
-    
+    margin: auto;
 `
 const MainAdsViewItemViewedText1 = styled.span`
     font-size: 28px;
@@ -122,14 +121,65 @@ export const MainAdsViewItemViewedBox = (props) => {
 }
 
 export const DiscountsViewGroup = styled.div`
+    padding: 0px 10px;
     display: flex;
     flex-direction:column;
-    justify-content:space-around;
-    background: black;
-    max-height: 410px;
-    width: 30%;
+    justify-content:space-between; 
+    max-height: 400px;
+    width: 30%; 
 `
 
 export const DiscountsViewItem = styled.div`
-
+    padding:  10px 100px 30px 30px;
+    color:  white; 
+    box-sizing: border-box;
+    height: 110px;
+    width: 100%;
+    font-size:18px;
+    border-radius: 6px;
+    text-align:left;
+    gap:10px;
+    font-weight: 300;
+    &:nth-of-type(1){
+        padding: 10px 30px;
+        font-weight: 400;
+        background:#E3F0FF;
+    } 
+    &:nth-of-type(2){
+        background:#55BDC3;
+    } 
+    &:nth-of-type(3){
+        background: #F38332;
+    } 
 `
+
+const StartupImg = styled.img`
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+`
+
+const StartupBtn = styled.button`
+    margin: 5px 0px;
+    height: 30px;
+    border-radius:6px;
+    width: 100%;
+    border: none;
+    background:#0D6EFD;
+    color:#fff;
+    &:nth-of-type(2){
+        color:#0D6EFD;
+        background:#fff;
+    } 
+`
+
+export const Startup = (props) => {
+    return <DiscountsViewItem {...props} style={{ height: '150px' }} >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '5px 0px' }}>
+            <StartupImg src={Avatar} />
+            <span style={{ color: 'black', fontSize: '15px' }}>Hi, user<br />let’s get stated</span>
+        </div>
+        <StartupBtn children={"Join now"} />
+        <StartupBtn children={"Log in"} />
+    </DiscountsViewItem>
+}

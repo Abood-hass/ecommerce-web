@@ -10,6 +10,7 @@ export const SearchBarContainer = styled.div`
     height: 35px;
     border: 3px solid ${LightBlue};
     border-radius: 6px;
+    margin:auto;
 `
 
 

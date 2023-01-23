@@ -2,18 +2,21 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
     display:grid;
-    grid-template-columns: 15% 65% 15%;
+    grid-template-columns: 10% 70% 20%;
     align-items:center;
     height: 75px;
     box-sizing: border-box;
     padding: 0px 90px;
     justify-content: space-evenly;
-    width:100%;
+    width:98vw;
+    margin:auto;
+    overflow:hidden;
 `
 export const NavIconsGroup = styled.div`
     display: flex;
     height: 35px;
     width: fit-content;
+    margin:auto;
     gap: 15px;
 `
 
@@ -33,18 +36,21 @@ export const NavImage = styled.img`
 `
 export const NavText = styled.span`
     font-size: 11px;
+    text-align:center;
+    width:50px;
 `
 
 
 export const HeaderSecondContainer = styled.div`
-    display:grid;
-    grid-template-columns: 67% 12%;
+    display:flex; 
     border: 1px solid #8B96A565;
     align-items:center;
     height: 40px;
     box-sizing: border-box; 
     justify-content: space-evenly;
-    width:100%; 
+    width:98vw;
+    margin:auto;
+    gap:30vw;
 `
 
 export const HeaderSecondGroup = styled.div`
@@ -53,6 +59,7 @@ export const HeaderSecondGroup = styled.div`
     text-align:center;
     width: fit-content;
     gap: 20px;
+    margin:auto; 
 `
 
 export const SecondHeaderItemImg = styled.img`

@@ -10,7 +10,7 @@ import SearchBar from '../../Components/SearchBar'
 
 export default function Index() {
     return (
-        <>
+        <div>
             <HeaderContainer>
                 <LogoComponent />
                 <SearchBar />
@@ -35,6 +35,6 @@ export default function Index() {
                     <SecondHeaderItem>  <SelectHeaderMenu><OptionHeaderMenu children={'Ship to'} /></SelectHeaderMenu></SecondHeaderItem>
                 </HeaderSecondGroup>
             </HeaderSecondContainer>
-        </>
+        </div>
     )
 }
