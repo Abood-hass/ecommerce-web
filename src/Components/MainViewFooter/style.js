@@ -6,23 +6,23 @@ export const FooterContainer = styled.div`
         flex-direction:column;
         align-items: flex-start;
         text-align: left;
-        width: 300px;
-        gap:20px;      
+        max-width: 300px;
+        gap:20px;  
     }
     box-sizing: border-box;
-    padding: 4% 10%;
+    padding: 50px 6% 0px 6%;
     background:#fff;
-    grid-template-columns: 350px repeat(4,150px) 350px;
-    display:grid;
-    justify-content:center;
+    grid-template-columns:repeat(6,auto);
+    display:flex;
+    justify-content:space-around;
     width:100%;
     height:300px;
     margin:auto;
+    gap:60px;
 `
 
 
-export const FooterBrandGroup = styled.div`
-    
+export const FooterBrandGroup = styled.div` 
     &>span{ 
         font-size: 16px;
         font-weight: 400; 
@@ -49,6 +49,7 @@ export const FooterBrandSoicalMedia = styled.div`
 
 
 export const FooterLinksGroup = styled.div`
+        width:fit-content;
     &>span{ 
         font-size: 16px;
         font-weight: 400; 
@@ -62,7 +63,6 @@ export const FooterLinksGroup = styled.div`
     }
     &>img{  
         height: 42px;
-        width: 123px; 
     }
 `
 

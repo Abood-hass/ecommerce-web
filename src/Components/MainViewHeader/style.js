@@ -8,7 +8,8 @@ export const HeaderContainer = styled.div`
     box-sizing: border-box;
     padding: 0px 90px;
     justify-content: space-evenly;
-    width:97vw;
+    // width:97vw;
+    width:100%;
     margin:auto;
     overflow:hidden;
 `
@@ -48,7 +49,7 @@ export const HeaderSecondContainer = styled.div`
     height: 40px;
     box-sizing: border-box; 
     justify-content: space-evenly;
-    width:98vw;
+    width:100%;
     margin:auto;
     gap:30vw;
 `

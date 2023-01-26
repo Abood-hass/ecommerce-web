@@ -11,6 +11,7 @@ export const MainAdsViewContainer = styled.div`
     border-radius: 6px;
     box-sizing: border-box;
     padding: 8px;
+    overflow:hidden;
 `
 
 
@@ -52,6 +53,7 @@ export const MainAdsViewItemViewedContainer = styled.div`
     position:relative;
     max-height: 410px;
     margin:auto;
+    height: 100%;
     width: 80%;
     object-fit: cover;
     
@@ -59,8 +61,8 @@ export const MainAdsViewItemViewedContainer = styled.div`
 export const MainAdsViewItemViewedImage = styled.img`
     background:gray;
     transition: all 300ms;
-    max-height: 384px;
-    width: 800px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
     margin: auto;
 `
@@ -99,7 +101,7 @@ const MainAdsViewItemViewedTexts = styled.div`
     align-items:left;
     justify-content: space-between;
     gap:3px;
-    color:${LightBlue};
+    color:#0096a9;
 `
 const MainAdsViewItemViewedTextsDiv = styled.div`
     display: flex;
@@ -113,8 +115,8 @@ export const MainAdsViewItemViewedBox = (props) => {
     const [blur, setBlur] = useState(false)
     return <MainAdsViewItemViewedTexts >
         <MainAdsViewItemViewedTextsDiv style={blur ? { background: "#fff6" } : {}}>
-            <MainAdsViewItemViewedText2 children={props.text2} style={blur ? { color: "black" } : {}} />
             <MainAdsViewItemViewedText1 children={props.text1} style={blur ? { color: "black" } : {}} />
+            <MainAdsViewItemViewedText2 children={props.text2} style={blur ? { color: "black" } : {}} />
         </MainAdsViewItemViewedTextsDiv>
         <MainAdsViewItemViewedButton onClick={props.onClick} onMouseEnter={() => setBlur(true)} onMouseLeave={() => setBlur(false)} />
     </MainAdsViewItemViewedTexts>

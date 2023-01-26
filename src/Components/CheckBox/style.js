@@ -3,11 +3,10 @@ import { LightBlue } from "../ColorSchema";
 
 
 export const CheckBoxContainer = styled.div`
-    user-select: none;
-    width: 100%;
+    user-select: none; 
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 `
 
 

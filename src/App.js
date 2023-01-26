@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 import LoginPage from './Pages/LoginAndRegister/LoginPage'
 import LoginAndRegister from './Pages/LoginAndRegister'
+import ExplorePage from './Pages/ExplorePage'
 import RegisterPage from './Pages/LoginAndRegister/RegisterPage'
-import MineShoppingPage from './Pages/MineShoppingPage'
-
+import MineShoppingPage from './Pages/ExplorePage/MineShoppingPage'
+import SearchResultPage from './Pages/ExplorePage/SearchResultPage'
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
           <Route index={true} element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
         </Route>
-        <Route path='/explore' element={<MineShoppingPage />} />
+        <Route path='/explore' element={<ExplorePage />} >
+          <Route index={true} element={<MineShoppingPage />} />
+          <Route path='search' element={<SearchResultPage />} />
+        </Route>
 
       </Routes>
     </Router>

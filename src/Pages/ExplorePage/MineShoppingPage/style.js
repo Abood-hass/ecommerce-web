@@ -4,9 +4,13 @@ export const MainShoppingContainer = styled.div`
     button{
         cursor:pointer;
     }
-    background: #f6fafd;
+    background: #F6FaFd;
     width: 100%;
     margin:auto;
+    &>div{
+        width:88%;
+        margin:auto;
+    }
 `
 
 export const MainShoppingContainerBody = styled.div`
@@ -14,7 +18,7 @@ export const MainShoppingContainerBody = styled.div`
     flex-direction: column;
     algin-items: center;
     justify-content: space-evenly; 
-    width: 1330px;
+    width: 85vw;
     margin: auto;
     margin-top: 10px;
     height:fit-content;

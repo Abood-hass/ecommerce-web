@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavIcon, NavIconsGroup, SearchBarButton, SearchBarContainer, SearchBarInput, SearchBarSelect } from './style'
+import { SearchBarButton, SearchBarContainer, SearchBarInput, SearchBarSelect } from './style'
 
 export default function index() {
     return (

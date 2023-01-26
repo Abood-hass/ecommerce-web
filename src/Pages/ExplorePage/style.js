@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const LoginPageContainer = styled.div`
-    background:#F7F7F7;
+export const ExplorePageContainer = styled.div`
+    background:#F6FaFd;
     display:flex;
     flex-direction: row;
     align-items: center;
