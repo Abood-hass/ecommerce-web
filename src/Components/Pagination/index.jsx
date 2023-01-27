@@ -2,6 +2,8 @@ import React from 'react'
 import { PaginationBtn, PaginationBtnsGroup, PaginationContainer, PaginationNumberOfItems, } from './style'
 
 export default function index(props) {
+    let availablePages = Math.floor((parseInt(props.dataLength) / parseInt(props.itemList)))
+    availablePages = (availablePages < 1) ? 1 : availablePages
     return (
         <PaginationContainer>
             <PaginationBtnsGroup>
@@ -11,11 +13,12 @@ export default function index(props) {
                     <option children={"Show " + 10} value={10} />
                 </PaginationNumberOfItems>
                 <div>
-                    <PaginationBtn children={"<"} value={props.pageNumber} onClick={() => props.changePageNumber(props.pageNumber - 1)} />
-                    <PaginationBtn style={{ fontSize: "16px" }} children={"1"} onChange={props.changePageNumber} />
-                    <PaginationBtn style={{ fontSize: "16px" }} children={"2"} onChange={props.changePageNumber} />
-                    <PaginationBtn style={{ fontSize: "16px" }} children={"3"} onChange={props.changePageNumber} />
-                    <PaginationBtn children={">"} value={props.pageNumber} onClick={() => props.changePageNumber(props.pageNumber + 1)} />
+                    <PaginationBtn children={"<"} value={props.pageNumber} onClick={() => props.changePageNumber((props.pageNumber !== 0) ? props.pageNumber - 1 : props.pageNumber)} />
+                    {[...new Array(availablePages)].map((i, ind) => <PaginationBtn style={{ fontSize: "16px" }}
+                        children={ind + 1}
+                        onClick={() => props.changePageNumber(ind)} />)}
+
+                    <PaginationBtn children={">"} value={props.pageNumber} onClick={() => props.changePageNumber((props.pageNumber !== availablePages - 1) ? props.pageNumber + 1 : props.pageNumber)} />
                 </div>
             </PaginationBtnsGroup>
         </PaginationContainer>

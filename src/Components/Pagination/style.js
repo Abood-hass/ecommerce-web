@@ -28,6 +28,7 @@ export const PaginationBtn = styled.button`
     &:hover {
         background:#c9c9ca;
     }
+     
     height: 100%;
     width: 40px;  
     background:#0000;

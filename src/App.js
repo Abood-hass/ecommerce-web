@@ -5,6 +5,7 @@ import ExplorePage from './Pages/ExplorePage'
 import RegisterPage from './Pages/LoginAndRegister/RegisterPage'
 import MineShoppingPage from './Pages/ExplorePage/MineShoppingPage'
 import SearchResultPage from './Pages/ExplorePage/SearchResultPage'
+import ProductViewPage from './Pages/ExplorePage/ProductViewPage'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/explore' element={<ExplorePage />} >
           <Route index={true} element={<MineShoppingPage />} />
           <Route path='search' element={<SearchResultPage />} />
+          <Route path='product' element={<ProductViewPage />} />
         </Route>
 
       </Routes>

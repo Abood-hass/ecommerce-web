@@ -1,5 +1,7 @@
 import React from 'react'
-import { Dot, GrayStarIcon, OrdersNumber, RateProductContainer, ShippingTypePaid, ShippingTypeFree, StarIcon, StarsNumber } from './style'
+import { Dot, GrayStarIcon, OrdersNumber, RateProductContainer, ShippingTypePaid, ShippingTypeFree, StarIcon, StarsNumber, ReviewsNumber, SoldsNumber } from './style'
+import IconsComments from '../../Assest/Images/icons-comments.png'
+import IconsShopaholic from '../../Assest/Images/icon-shopaholic.png'
 
 export default function Index(props) {
     const rate = props.rate % 6
@@ -13,11 +15,16 @@ export default function Index(props) {
             })}
 
             <StarsNumber children={rate || 0} />
-            <Dot />
-            <OrdersNumber children={props.ordersNumber || 0} />
-            <Dot />
-            {props.shippingPrice ? <ShippingTypePaid children={"Shipping for $" + props.shippingPrice} /> :
-                <ShippingTypeFree />}
+
+            {props.basicsInfo ? <><Dot /><img src={IconsComments} style={{ height: '18px' }} alt="" />
+                <ReviewsNumber children={props.reviewsNumber || 4} />
+                <Dot /><img src={IconsShopaholic} style={{ height: '18px' }} alt="" />
+                <SoldsNumber children={props.soldsNumber || 10} />
+            </> :
+                <> <Dot /><OrdersNumber children={props.ordersNumber || 10} /></>}
+
+            {!props.basicsInfo && !props.hideShipping && (props.shippingPrice ? <> <Dot /><ShippingTypePaid children={"Shipping for $" + props.shippingPrice} /> </> :
+                <> <Dot /><ShippingTypeFree /></>)}
         </RateProductContainer>
     )
 }

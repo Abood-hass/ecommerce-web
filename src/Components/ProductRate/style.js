@@ -7,8 +7,11 @@ export const RateProductContainer = styled.div`
     &>span{
         margin: 0px 10px;
     }
-
-    display:felx;
+    &>img{
+        height: 18px;
+        margin-left:5px;
+    }
+    display:flex;
     align-items:center;
     height:20px;
     width:fit-content; 
@@ -30,6 +33,7 @@ export const StarsNumber = styled.span`
 export const Dot = styled.img.attrs(_ => ({ src: dot }))`
     height:8px;
     width:8px;
+    margin-right:5px;
     object-fit:contain;
 `
 export const OrdersNumber = styled.span`
@@ -39,7 +43,21 @@ export const OrdersNumber = styled.span`
     color: #8B96A5;
     font-size: 16px;
 `
+export const ReviewsNumber = styled.span`
+    &:after{
+        content:" reviews"
+    } 
+    color: #8B96A5;
+    font-size: 16px;
+`
 
+export const SoldsNumber = styled.span`
+    &:after{
+        content:" sold"
+    } 
+    color: #8B96A5;
+    font-size: 16px;
+`
 
 export const ShippingTypeFree = styled.span.attrs(_ => ({ children: "Free Shipping" }))`
     color: #00B517;

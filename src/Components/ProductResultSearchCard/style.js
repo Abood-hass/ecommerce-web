@@ -2,6 +2,7 @@ import styled from "styled-components";
 import iconHeart from '../../Assest/Images/icon-heart.png'
 
 export const ProductResultCardContainer = styled.div`
+    cursor:pointer;
     position:relative;
     display:grid;
     grid-template-columns: 20% 70%;
@@ -16,6 +17,7 @@ export const ProductResultCardContainer = styled.div`
         width:190px;
         height:190px;
         oblect-fit:contain;
+        margin:auto;
     }
 `
 export const ProductResultCardInfo = styled.div`

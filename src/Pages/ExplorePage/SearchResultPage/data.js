@@ -8,6 +8,7 @@ import img6 from '../../../Assest/Images/Products/image6.png'
 
 export const ProductData = [
     {
+        id: 1,
         name: "Canon Cmera EOS 2000, Black 10x zoom",
         img: img1,
         details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -18,6 +19,7 @@ export const ProductData = [
         rate: 4
     },
     {
+        id: 2,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img2, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -27,6 +29,7 @@ export const ProductData = [
         rate: 2
     },
     {
+        id: 3,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -35,6 +38,47 @@ export const ProductData = [
         shippingPrice: 25,
         rate: 3
     }, {
+        id: 4,
+        name: "Canon Cmera EOS 2000, Black 10x zoom",
+        img: img4,
+        details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 15,
+        rate: 4
+    },
+    {
+        id: 5,
+        name: "GoPro HERO6 4K Action Camera - Black",
+        img: img5, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 15,
+        rate: 2
+    },
+    {
+        id: 6,
+        name: "GoPro HERO6 4K Action Camera - Black",
+        img: img6, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 25,
+        rate: 3
+    },
+    {
+        id: 7,
+        name: "GoPro HERO6 4K Action Camera - Black",
+        img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 25,
+        rate: 3
+    }, {
+        id: 8,
         name: "Canon Cmera EOS 2000, Black 10x zoom",
         img: img1,
         details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -45,6 +89,7 @@ export const ProductData = [
         rate: 4
     },
     {
+        id: 9,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img2, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -54,6 +99,7 @@ export const ProductData = [
         rate: 2
     },
     {
+        id: 10,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -61,8 +107,39 @@ export const ProductData = [
         realPrice: 1300,
         shippingPrice: 25,
         rate: 3
+    }, {
+        id: 11,
+        name: "Canon Cmera EOS 2000, Black 10x zoom",
+        img: img4,
+        details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 15,
+        rate: 4
     },
     {
+        id: 12,
+        name: "GoPro HERO6 4K Action Camera - Black",
+        img: img5, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 15,
+        rate: 2
+    },
+    {
+        id: 13,
+        name: "GoPro HERO6 4K Action Camera - Black",
+        img: img6, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua`,
+        discountPrice: 1200,
+        realPrice: 1300,
+        shippingPrice: 25,
+        rate: 3
+    },
+    {
+        id: 14,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -77,10 +154,10 @@ export const ProductData = [
 
 export const FilterHeader = "Category"
 export const FilterOptions = [
-    "Mobile accessory",
-    "Electronics",
-    "Smartphones",
-    "Modern tech"
+    { title: "Mobile accessory", value: false },
+    { title: "Electronics", value: false },
+    { title: "Smartphones", value: false },
+    { title: "Modern tech", value: false },
 ]
 
 
@@ -108,7 +185,7 @@ export const FeaturesOptions = [
 
 export const ConditionHeader = "Condition"
 export const ConditionOptions = [
-    "Refurbished",
-    "Brand new",
-    "Old items",
+    { title: "Refurbished", value: false },
+    { title: "Brand new", value: false },
+    { title: "Old items", value: false },
 ]

@@ -40,7 +40,6 @@ export const SearchFilterBody = styled.div`
     align-items: left;
     justify-content: space-evenly;
     gap:10px;
-    
     &>span{
         &:hover{
             font-weight: 600;
@@ -58,6 +57,7 @@ export const SearchFilterBody = styled.div`
 export const RangeSliderBody = styled.div`
     position: relative;
      width: 90%; 
+    overflow: hidden;
     font-weight: 400;
     font-size: 16px;
     &>div{
@@ -87,12 +87,12 @@ export const RangeSliderBody = styled.div`
 `
 
 export const RadiusSelectBody = styled.div`
-        gap:10px;
-
-display:flex;
-flex-direction:column;
+    gap:10px;
+    overflow: hidden;
+    display:flex;
+    flex-direction:column;
     margin:10px 0px;
-align-items:left;
+    align-items:left;
     &>div{
         display:flex;
         gap:10px;
@@ -130,23 +130,36 @@ export const SearchFilterSeeAllBtn = styled.span.attrs(_ => ({ children: "See al
     color:#0D6EFD;
 `
 
+export const FilterHeader = (props) => {
 
-export const SearchFilterHeaderContainer = (props) => {
 
-    return <SearchFilterContainer>
+    return <SearchFilterContainer key={props.index}>
         <SearchFilterHeader>
             <span>{props.header}</span>
             <span onClick={props.show} style={{ transform: props.showed ? 'rotate(-90deg)' : 'rotate(90deg)' }}>&#10096;</span>
         </SearchFilterHeader>
+        {props.children}
+        <SearchFilterSeeAllBtn onClick={props.show} />
+    </SearchFilterContainer>
+}
+
+
+export const SearchFilterHeaderContainer = (props) => {
+    const SelectedStyle = {
+        background: '#afd2f8',
+        fontWeight: '500'
+    }
+
+    return <FilterHeader {...props}>
         <SearchFilterBody style={{ height: props.showed ? 'fit-content' : '0px' }}>
             {
                 (props.multiChoose) ?
                     props.options.map((option, index) => <CheckBox key={index} value={option.value} label={option.title} onClick={_ => props.selectFun(option.title)} />)
-                    : props.options.map((option, index) => { return <span key={index}>{option}</span> })
+                    : props.options.map((option, index) => { return <span onClick={_ => props.selectFun(option.title)} style={option.value ? SelectedStyle : {}} key={index}>{option.title}</span> })
             }
         </SearchFilterBody>
-        <SearchFilterSeeAllBtn onClick={props.show} />
-    </SearchFilterContainer>
+    </FilterHeader>
+
 }
 
 
@@ -155,12 +168,8 @@ export const RangeSliderHeaderContainer = (props) => {
     const [maxValue, setMaxValue] = useState(0);
     const [minValue, setMinValue] = useState(0);
 
-    return <SearchFilterContainer>
-        <SearchFilterHeader>
-            <span>{props.header}</span>
-            <span onClick={props.show} style={{ transform: props.showed ? 'rotate(-90deg)' : 'rotate(90deg)' }}>&#10096;</span>
-        </SearchFilterHeader>
-        <RangeSliderBody>
+    return <FilterHeader {...props}>
+        <RangeSliderBody style={{ height: props.showed ? 'fit-content' : '0px' }}>
             <RangeSlider min={minValue} max={maxValue} value={sliderValue} onChange={(e) => setValue(e.target.value)} />
             <div>
                 <span>Min</span>
@@ -172,22 +181,19 @@ export const RangeSliderHeaderContainer = (props) => {
             </div>
             <button children={"Apply"} />
         </RangeSliderBody>
-        <SearchFilterSeeAllBtn onClick={props.show} />
-    </SearchFilterContainer>
+    </FilterHeader >
 }
 
 
 
 export const RadiusHeaderContainer = (props) => {
-    return <SearchFilterContainer>
-        <SearchFilterHeader>
-            <span>{props.header}</span>
-            <span onClick={props.show} style={{ transform: props.showed ? 'rotate(-90deg)' : 'rotate(90deg)' }}>&#10096;</span>
-        </SearchFilterHeader>
-        <RadiusSelectBody>
-            <div><input type={"radio"} name={"1"} /><label>Any</label></div>
-            {props.options.map(choose => <div><input type={"radio"} name={"1"} value={choose} /><label>{choose}</label></div>)}
+    return <FilterHeader {...props}>
+        <RadiusSelectBody style={{ height: props.showed ? 'fit-content' : '0px' }}>
+            <div><input type={"radio"} name={"Choose"} /><label>Any</label></div>
+            {props.options.map(choose => <div onClick={() => props.selectFun(choose.title, true)}>
+                <input type={"radio"} checked={choose.value} name={"Choose"} value={choose.title} />
+                <label>{choose.title}</label>
+            </div>)}
         </RadiusSelectBody>
-        <SearchFilterSeeAllBtn onClick={props.show} />
-    </SearchFilterContainer>
+    </FilterHeader >
 }

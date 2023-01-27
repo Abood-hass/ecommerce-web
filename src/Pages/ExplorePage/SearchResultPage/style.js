@@ -17,11 +17,20 @@ export const SearchResultsHeader = styled.div`
     border-radius: 6px;
 `
 export const SearchResultsItemsList = styled.div`
-margin: 10px 0px;
+    margin: 10px 0px;
     width:100%;
     box-sizing:border-box;
     display:flex;
     flex-direction:column; 
-    justify-content:space-around;
+    justify-content:space-around; 
+`
+
+export const SearchResultsItemsGrid = styled.div`
+    margin: 10px auto;
+    width:100%;
+    box-sizing:border-box;
+    display:grid;
+    grid-template-columns: auto auto auto; 
     gap:20px;
+    justify-items: center;
 `

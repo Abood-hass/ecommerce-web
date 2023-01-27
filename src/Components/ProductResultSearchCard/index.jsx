@@ -4,7 +4,7 @@ import ProductRate from '../ProductRate'
 
 export default function Index(props) {
     return (
-        <ProductResultCardContainer key={props.index}>
+        <ProductResultCardContainer key={props.index} onClick={props.onClick}>
             <img src={props.img} />
             <ProductResultCardInfo>
                 <ProductResultName children={props.name || "Product Name"} />

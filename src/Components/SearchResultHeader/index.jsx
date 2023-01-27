@@ -1,29 +1,24 @@
 import React, { useState } from 'react'
 import CheckBox from '../CheckBox'
-import { SearchResultsBody, SearchResultsDropList, SearchResultsHeader, SearchResultsMenuSwitch } from './style'
+import { SearchResultsDropList, SearchResultsHeader, SearchResultsMenuSwitch } from './style'
 
 import grid from '../../Assest/Images/icon-grid.png'
 import menu from '../../Assest/Images/icon-menu.png'
 
 export default function Index(props) {
-    const [Switch, setSwtch] = useState(0);
-    const [Verified, setVerified] = useState(true);
     return (
-        // <SearchResultsBody>
-        //     <div></div>
         <SearchResultsHeader>
             <div>
                 {props.count || 0} items in <b>{props.category || "this category"}</b>
             </div>
             <div>
-                <CheckBox label="Verified only" value={Verified} onClick={_ => setVerified(prev => !prev)} />
+                <CheckBox label="Verified only" value={props.verify} onClick={_ => props.setVerified(prev => !prev)} />
                 <SearchResultsDropList children={<option>Featured</option>} />
-                <SearchResultsMenuSwitch style={{ background: `linear-gradient(${Switch && '-'}90deg, #fff 50%, #DADADA 50%)` }}>
-                    <img src={grid} onClick={_ => setSwtch(1)} />
-                    <img src={menu} onClick={_ => setSwtch(0)} />
+                <SearchResultsMenuSwitch style={{ background: `linear-gradient(${props.switch ? '' : '-'}90deg, #fff 50%, #DADADA 50%)` }}>
+                    <img src={grid} onClick={_ => props.setSwitch(false)} alt="" />
+                    <img src={menu} onClick={_ => props.setSwitch(true)} alt="" />
                 </SearchResultsMenuSwitch>
             </div>
         </SearchResultsHeader>
-        /* </SearchResultsBody> */
     )
 }
