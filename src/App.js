@@ -6,6 +6,8 @@ import RegisterPage from './Pages/LoginAndRegister/RegisterPage'
 import MineShoppingPage from './Pages/ExplorePage/MineShoppingPage'
 import SearchResultPage from './Pages/ExplorePage/SearchResultPage'
 import ProductViewPage from './Pages/ExplorePage/ProductViewPage'
+import CartPage from './Pages/CartPage'
+
 
 function App() {
   return (
@@ -23,7 +25,7 @@ function App() {
           <Route path='search' element={<SearchResultPage />} />
           <Route path='product' element={<ProductViewPage />} />
         </Route>
-
+        <Route path='/cart' element={<CartPage />} />
       </Routes>
     </Router>
     // </AppStyled>

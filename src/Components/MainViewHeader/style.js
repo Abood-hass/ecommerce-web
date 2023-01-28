@@ -7,8 +7,7 @@ export const HeaderContainer = styled.div`
     height: 75px;
     box-sizing: border-box;
     padding: 0px 90px;
-    justify-content: space-evenly;
-    // width:97vw;
+    justify-content: space-evenly; 
     width:100%;
     margin:auto;
     overflow:hidden;

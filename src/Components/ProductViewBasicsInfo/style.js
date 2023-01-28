@@ -58,7 +58,7 @@ export const ProductViewInfoAndPrice = styled.div`
     flex-direction:column;
     gap:15px;
     mix-height: 80%;
-    // width: 100%;
+    width: 100%;
     &>span{
         font-weight: 600;
         font-size: 20px;

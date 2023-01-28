@@ -8,12 +8,12 @@ import menu from '../../Assest/Images/icon-menu-50.png'
 import LogoComponent from '../../Components/LogoComponent'
 import SearchBar from '../../Components/SearchBar'
 
-export default function Index() {
+export default function Index(props) {
     return (
         <div>
             <HeaderContainer>
                 <LogoComponent />
-                <SearchBar />
+                {props.HideSearchBar ? <div></div> : <SearchBar />}
                 <NavIconsGroup>
                     <NavIcon ><NavImage src={profile} /><NavText children={"Profile"} /></NavIcon>
                     <NavIcon ><NavImage src={message} /><NavText children={"Message"} /></NavIcon>
@@ -21,7 +21,7 @@ export default function Index() {
                     <NavIcon ><NavImage src={cart} /><NavText children={"The Cart"} /></NavIcon>
                 </NavIconsGroup>
             </HeaderContainer>
-            <HeaderSecondContainer>
+            <HeaderSecondContainer style={props.HideSecond ? { display: "none" } : {}}>
                 <HeaderSecondGroup>
                     <SecondHeaderItem> <SecondHeaderItemImg src={menu} /> <span>All category</span></SecondHeaderItem>
                     <SecondHeaderItem>  <span>Hot offers</span></SecondHeaderItem>

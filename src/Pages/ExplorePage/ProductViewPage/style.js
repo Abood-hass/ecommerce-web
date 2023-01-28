@@ -34,6 +34,7 @@ export const MayYouLike = styled.div`
     gap: 10px;
     box-sizing:border-box;
     padding: 20px;
+    user-select:none;
      &>span{
         font-weight: 500;
         margin-bottom: 10px;
@@ -46,14 +47,20 @@ export const MayYouLikeItem = styled.div`
 cursor:pointer;
     display:flex; 
     width:100%;
-    height:fit-content;
+    height:75px;
     gap:10px;
-    box-sizing:border-box; 
+    box-sizing:border-box;
+    &:hover{
+        &>img{
+            transition: all 200ms;
+            padding:4px;
+        }
+    }
     &>img{
         box-sizing:border-box;
-        width: 70px;
-        height: 70px;
-        padding:10px;
+        width: 70px; 
+        object-fit:contain;
+        padding:6px;
         border: 1px solid #E0E0E0;
         border-radius: 6px;
     }
