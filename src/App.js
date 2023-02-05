@@ -6,12 +6,14 @@ import RegisterPage from './Pages/LoginAndRegister/RegisterPage'
 import MineShoppingPage from './Pages/ExplorePage/MineShoppingPage'
 import SearchResultPage from './Pages/ExplorePage/SearchResultPage'
 import ProductViewPage from './Pages/ExplorePage/ProductViewPage'
+import ErrorPage from './Pages/ErrorPage'
 import CartPage from './Pages/CartPage'
 import { darkTheme, lightTheme } from './theme';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { AuthContext } from './ContextApi/authContext';
 import CartContext from './ContextApi/CartContext';
+import ErrorBundle from './Components/ErrorBundle';
 
 
 function App() {
@@ -28,28 +30,31 @@ function App() {
 
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
-      <Router>
-        <AuthContext.Provider value={{ token, setToken: setUserToken }} >
-          <CartContext>
-            <Routes>
-              <Route path='/' element={<Navigate to={"/user"} />} />
-              <Route path='/user' element={<LoginAndRegister />}>
-                <Route index={true} element={<LoginPage />} />
-                <Route path="register" element={<RegisterPage />} />
-              </Route>
-              <Route path='/explore' element={<ExplorePage />} >
-                <Route index={true} element={<MineShoppingPage />} />
-                <Route path='search' element={<SearchResultPage />} />
-                <Route path='product' element={<ProductViewPage />} />
-              </Route>
-              <Route path='/cart' element={<CartPage />} />
-            </Routes>
+    <ErrorBundle>
+      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
+        <Router>
+          <AuthContext.Provider value={{ token, setToken: setUserToken }} >
+            <CartContext>
+              <Routes>
+                <Route path='/' element={<Navigate to={"/user"} />} />
+                <Route path='/user' element={<LoginAndRegister />}>
+                  <Route index={true} element={<LoginPage />} />
+                  <Route path="register" element={<RegisterPage />} />
+                </Route>
+                <Route path='/explore' element={<ExplorePage />} >
+                  <Route index={true} element={<MineShoppingPage />} />
+                  <Route path='search' element={<SearchResultPage />} />
+                  <Route path='product' element={<ProductViewPage />} />
+                </Route>
+                <Route path='/cart' element={<CartPage />} />
+                <Route path='*' element={<ErrorPage />} />
+              </Routes>
 
-          </CartContext>
-        </AuthContext.Provider>
-      </Router>
-    </ThemeProvider>
+            </CartContext>
+          </AuthContext.Provider>
+        </Router>
+      </ThemeProvider>
+    </ErrorBundle>
   );
 }
 
