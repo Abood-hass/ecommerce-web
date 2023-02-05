@@ -44,8 +44,8 @@ export default function Index(props) {
                 </HeaderSecondGroup>
             </HeaderSecondContainer>
             <MobileFriendlyHeader>
-                <div><img src={menu} /> <LogoComponent /></div>
-                <div><img src={cart} /> <img src={profile} /> </div>
+                <div><img src={menu} alt="" /> <LogoComponent /></div>
+                <div><img src={cart} alt="" /> <img src={profile} alt="" /> </div>
             </MobileFriendlyHeader>
             <MobileFriendlySearch>
                 <SearchBarInput />

@@ -9,7 +9,7 @@ export default function index() {
             <SubscribeHeaderContainer children={"Subscribe on our newsletter"} />
             <SubscribeBodyContainer children={"Get daily news on upcoming offers from many suppliers all over the world"} />
             <SubscribeBtnContainer>
-                <img src={EmailIcon} />
+                <img src={EmailIcon} alt="" />
                 <SubscribeInput />
                 <Button style={{ height: '40px', fontSize: "16px" }} label={"Subscribe"} />
             </SubscribeBtnContainer>

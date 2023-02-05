@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { FooterContainer, OpstionFootLogin, PaymentWaysLogos } from './style'
 import PaymentLogo from '../PaymentLogo'
 

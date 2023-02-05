@@ -15,9 +15,9 @@ import CartContext from './ContextApi/CartContext';
 
 
 function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme] = useState("light");
   const isDarkTheme = theme === "dark";
-  const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
+  // const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
 
   const [token, setToken] = useState(localStorage.getItem("token"));
 

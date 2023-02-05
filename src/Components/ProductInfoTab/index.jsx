@@ -25,6 +25,7 @@ export default function Index() {
                     desc: <ProductDescription />,
                     rev: <span>rev</span>,
                     ship: <span>ship</span>,
+                    company: <span>company</span>,
                 }[tab]}
             </div>
         </div>

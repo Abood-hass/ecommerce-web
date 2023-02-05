@@ -62,7 +62,7 @@ export default function Index() {
         surname: yup.string().required().min(3).max(15),
         email: yup.string().email(),
         phone: yup.string().length(7),
-        password: yup.string().matches("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$", "Write password in right form"),
+        // password: yup.string().matches("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$", "Write password in right form"),
         repeatedPassword: yup.string().test('confirm password', 'Repeated Password Should be exacly like Password', (value) => inputsData[4].value === value),
         termsAndConditions: yup.boolean().test('check terms', 'Terms should be checked', (value) => value),
     });

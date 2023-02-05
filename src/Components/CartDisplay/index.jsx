@@ -4,8 +4,8 @@ import CartListItem from '../CartListItem'
 import OrLine from '../OrLine'
 import Buttom from '../Button'
 
-import img5 from '../../Assest/Images/RecommendedItems/Image5.png';
-import img6 from '../../Assest/Images/RecommendedItems/Image6.png';
+// import img5 from '../../Assest/Images/RecommendedItems/Image5.png';
+// import img6 from '../../Assest/Images/RecommendedItems/Image6.png';
 import emptyCart from '../../Assest/Images/empty-cart.png';
 import { useNavigate } from 'react-router-dom'
 import { CartCont, } from '../../ContextApi/CartContext'
@@ -19,7 +19,7 @@ export default function Index() {
 
 
     const [totalItemPrices, setTotalItemPrices] = useState(0)
-    const [discount, setDiscount] = useState(0)
+    const [discount] = useState(0)
     const [tax, setTax] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0)
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { OfferBoardBody, OfferBoardContainer, OfferBoardCounter, OfferBoardCounterContainer, OfferBoardCounterDeadLine, OfferBoardCounterItemsContainer, OfferBoardTitle } from './style'
+import React, { useState } from 'react'
+import { OfferBoardBody, OfferBoardContainer, OfferBoardCounter, OfferBoardCounterContainer, OfferBoardCounterItemsContainer, OfferBoardTitle } from './style'
 import OfferCard from './OfferCard'
 import { OffersData } from './data'
 import { useNavigate } from 'react-router-dom'
@@ -13,8 +13,8 @@ export default function Index() {
     const day = 24 * hour;
 
     let TimerValue = 4 * day + 13 * hour + 34 * minute + 10 * second;
-    const [times, setTimes] = useState(TimerValue)
-    const [Timer, setTimer] = useState([
+    const [times,] = useState(TimerValue)
+    const [Timer,] = useState([
         { label: "Day", val: Math.floor(times / day), unit: day },
         { label: "Hour", val: Math.floor((times - 4 * day) / hour), unit: hour },
         { label: "Min", val: Math.floor((times - (4 * day) - (13 * hour)) / minute), unit: minute },

@@ -33,7 +33,7 @@ export default function Index() {
 
     let schema = yup.object().shape({
         username: yup.string().required().min(3).max(15),
-        password: yup.string().matches("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$", "Write password in right form")
+        // password: yup.string().matches("^(?=.*[A-Za-z])(?=.*)[A-Za-z]{6,20}$", "Write password in right form")
     });
 
     const onLoginSubmit = (e) => {

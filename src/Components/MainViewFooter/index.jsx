@@ -31,14 +31,14 @@ export default function Index() {
                 })}
                 <FooterLinksGroup style={{ gap: "15px" }}>
                     <span>Get app</span>
-                    <img src={AppStoreIcon} />
-                    <img src={GooglePlayIcon} />
+                    <img src={AppStoreIcon} alt="" />
+                    <img src={GooglePlayIcon} alt="" />
                 </FooterLinksGroup>
             </FooterContainer>
             <FooterCopyRightBar>
                 <span>© 2023 Ecommerce.</span>
                 <div>
-                    <img src={langs[lang]} />
+                    <img src={langs[lang]} alt="" />
                     <select onChange={(e) => setlang(e.target.value)}>
                         <option value={0}>English</option>
                         <option value={1}>China</option>

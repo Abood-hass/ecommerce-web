@@ -29,7 +29,7 @@ export default function Index() {
                             <span>{item.name}</span>
                             <div>
                                 <span>{item.price.from}</span>
-                                <a>{" - "}</a>
+                                <>{" - "}</>
                                 <span>{item.price.to}</span>
                             </div>
                         </div>
