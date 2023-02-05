@@ -60,10 +60,10 @@ export const PriceData = styled.div`
 
 export const PriceDataTax = styled.span`
     &:before{content:"- "}
-    color:red
+    color:green
 `
 
 export const PriceDataDiscount = styled.span`
     &:before{content:"+ "}
-    color:green
+    color:red
 `

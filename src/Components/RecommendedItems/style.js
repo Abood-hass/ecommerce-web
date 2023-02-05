@@ -40,17 +40,23 @@ export const RecommendedItem = styled.div`
     align-items:center;
     text-align:left;
     height: 310px;
-    width: 220px; 
+    width: 15vw; 
     margin:auto;
     box-sizing:border-box;
-    padding: 24px 40px  15px 40px;
-
+    padding: 20px 20px  15px 20px;
+    @media (max-width: 1050px){
+        height: 250px;
+    }
 `
 
 export const RecommendedItemImage = styled.img` 
      width:150px; 
      hieght:150px;
     object-fit: containe;
+    @media (max-width: 1050px){
+        width:100px; 
+        hieght:100px;
+    }
 `
 
 export const RecommendedItemPrice = styled.span` 
@@ -61,16 +67,17 @@ export const RecommendedItemPrice = styled.span`
     text-align:left;
     width:100%;
     font-weight: 500;  
+    text-align: center;
+     
 `
 
-export const RecommendedItemName = styled.span`  
-    width:158px;
+export const RecommendedItemName = styled.span` 
     font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: -0.20000000298023224px;
-    text-align: left;
+    font-weight: 400; 
     color:#8B96A5;
+    @media (max-width: 1050px){
+        font-size: 12px;
+    }
 `
 
 
@@ -85,6 +92,9 @@ export const RecommendedItemAddToCartBox = styled.div`
     overflow:hidden;
     transition: all 300ms;
     background: ${LightBlue}50;
+    box-sizing:border-box;
+    padding:0px 15px;
+    color:#fff;
 `
 
 export const RecommendedItemAddToCartBtn = styled.button.attrs(_ => ({ children: "Add to the Cart" }))`
@@ -93,6 +103,7 @@ export const RecommendedItemAddToCartBtn = styled.button.attrs(_ => ({ children:
     color: #fff;
 
 }
+    z-index:9;
     height: 30px;
     margin:auto;
     border: none;
@@ -107,9 +118,11 @@ export const RecommendedItemCard = (props) => {
     const hover = { height: '200px' }
     const [mouseEnter, setMouseEnter] = useState(false);
 
-    return <RecommendedItem onMouseEnter={() => setMouseEnter(true)} onMouseLeave={() => setMouseEnter(false)}>
+    return <RecommendedItem onClick={props.onClick} onMouseEnter={() => setMouseEnter(true)} onMouseLeave={() => setMouseEnter(false)}>
         <RecommendedItemAddToCartBox style={mouseEnter ? hover : {}}>
-            <RecommendedItemAddToCartBtn />
+            <p>
+                Info about product
+            </p>
         </RecommendedItemAddToCartBox>
         <RecommendedItemImage src={props.img || "https://developer.mozilla.org/assets/mdn_contributor.png"} />
         <RecommendedItemPrice children={props.price || "15.2"} />

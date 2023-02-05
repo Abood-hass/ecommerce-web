@@ -1,13 +1,18 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AnotherLoginButtons, LoginFormContainer, LoginFormHeader, RegisterOption, RegisterOptionButton } from './style'
 import TextField from '../../Components/TextField'
 import CheckBox from '../../Components/CheckBox'
 import Button from '../../Components/Button'
 import OrLine from '../../Components/OrLine'
 import * as yup from 'yup'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
+import { AuthContext } from '../../ContextApi/authContext'
 
 export default function Index() {
+    const value = useContext(AuthContext)
+
+    const TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
+    const navigate = useNavigate()
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -34,11 +39,14 @@ export default function Index() {
     const onLoginSubmit = (e) => {
         e.preventDefault()
         try {
-            schema.validateSync({
+            schema.validate({
                 username: username,
                 password: password,
-            },
-                { abortEarly: false })
+            }, { abortEarly: false })
+                .then(_ => {
+                    value.setToken(TOKEN)
+                    navigate("/explore")
+                })
         } catch (error) {
             console.log(error?.errors)
 
@@ -51,7 +59,7 @@ export default function Index() {
         <LoginFormContainer onSubmit={onLoginSubmit}>
             <LoginFormHeader>Sign in</LoginFormHeader>
             <TextField
-                minLength={6}
+                minLength={3}
                 value={username}
                 onChange={onChangeUsername}
             />

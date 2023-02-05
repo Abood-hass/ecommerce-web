@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { LightBlue } from "../ColorSchema";
 import { Data1, Data2, HeaderImg1, HeaderImg2 } from "./data";
 
 const ProductGalleryContainer = styled.div`
@@ -20,7 +22,8 @@ const ProductGalleryHeader = styled.div`
     height:100%;
     border-radius: 6px 0px 0px 6px;
     width:100%;
-    text-align: left; 
+    text-align: left;
+    
 `
 
 const ProductGalleryHeaderTitle = styled.span` 
@@ -61,26 +64,38 @@ const ProductGalleryCard = styled.div`
 &:nth-of-type(4){
     border-width: 0px 0px  1px  0px;
 }
+&:hover{
+    &>div>*{
+    color:#fff;
+    }
+    background:${LightBlue}50;
+}
+    transition:all 200ms;
+    cursor:pointer;
     box-sizing: border-box;
     padding-bottom:20px;
     display:flex;
     align-items:center;
     justify-content:space-evenly;
-    gap:20px;
+    gap:1vw; 
     height: 150px;
     width: 100%;
     border:1px solid #E3E8EE;
     border-width: 0px 1px  1px  0px;
     text-align: left;
 `
-const ProductGalleryCardImage = styled.img`
-    height: 70px;
-    width: 70px;
+const ProductGalleryCardImage = styled.img` 
+    width: 4vw;
+    object-fit:contain;
+    background:#0000;
 `
 
 const ProductGalleryCardTitle = styled.span`
     font-weight: 600;
     font-size: 20px;
+     @media (max-width: 1050px){
+        font-size: 13px;
+    }
 `
 
 const ProductGalleryCardPrice = styled.span`
@@ -92,7 +107,7 @@ const ProductGalleryCardPrice = styled.span`
 
 const ProductCard = (props) => {
 
-    return <ProductGalleryCard>
+    return <ProductGalleryCard onClick={props.onClick}>
         <div style={{ display: 'flex', flexDirection: "column" }}>
             <ProductGalleryCardTitle children={props.name} />
             <ProductGalleryCardPrice>from<br />{"USD " + props.price}</ProductGalleryCardPrice>
@@ -104,11 +119,12 @@ const ProductCard = (props) => {
 
 
 export const ProductGallery = (props) => {
+    const navigate = useNavigate()
 
     const data = props.group ? Data1 : Data2;
     const Img = props.group ? HeaderImg1 : HeaderImg2
 
-    return <ProductGalleryContainer>
+    return <ProductGalleryContainer >
         <ProductGalleryHeader style={{
             backgroundImage: `url(${Img})`,
             transform: props.filter && 'scaleX(-1)',
@@ -136,13 +152,13 @@ export const ProductGallery = (props) => {
         <ProductGalleryImageContainers>
             <ProductGalleryImagesGroup>
                 {data.slice(0, 4).map((item, index) => {
-                    return <ProductCard key={index} {...item} />
+                    return <ProductCard onClick={_ => navigate("/explore/product")} key={index} {...item} />
                 })}
 
             </ProductGalleryImagesGroup>
             <ProductGalleryImagesGroup>
                 {data.slice(4, 8).map((item, index) => {
-                    return <ProductCard key={index} {...item} />
+                    return <ProductCard onClick={_ => navigate("/explore/product")} key={index} {...item} />
                 })}
             </ProductGalleryImagesGroup>
         </ProductGalleryImageContainers>

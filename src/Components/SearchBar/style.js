@@ -6,7 +6,7 @@ export const SearchBarContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 0px 0px 0px 2px;
-    width: fit-content;
+    width: 40vw;
     height: 35px;
     border: 3px solid ${LightBlue};
     border-radius: 6px;
@@ -19,7 +19,7 @@ export const SearchBarInput = styled.input.attrs(_ => ({
     placeholder: "Search"
 }))`
     outline: none;
-    width: 500px;
+    width: 100%;
     height: 90%;
     border: none;
 `

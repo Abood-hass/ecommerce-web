@@ -1,5 +1,20 @@
 import styled from "styled-components";
 
+
+export const MainHeaderContainer = styled.div`
+@media (max-width: 768px){
+    &>div:nth-of-type(1),
+    &>div:nth-of-type(2){
+        display:none;
+    }
+    &>div:nth-of-type(3),
+    &>div:nth-of-type(4){
+        display:flex;
+    }
+}
+`
+
+
 export const HeaderContainer = styled.div`
     display:grid;
     grid-template-columns: 10% 70% 20%;
@@ -11,6 +26,7 @@ export const HeaderContainer = styled.div`
     width:100%;
     margin:auto;
     overflow:hidden;
+    background:${props => props.theme.headerBgColor};
 `
 export const NavIconsGroup = styled.div`
     display: flex;
@@ -21,6 +37,7 @@ export const NavIconsGroup = styled.div`
 `
 
 export const NavIcon = styled.div`
+    user-select:none;
     cursor: pointer;
     display: flex;
     align-items:center;
@@ -85,4 +102,33 @@ export const SelectHeaderMenu = styled.select`
 
 export const OptionHeaderMenu = styled.option` 
     font-size: 12px;
+`
+
+
+export const MobileFriendlyHeader = styled.div`
+    display:none;
+    box-sizing:border-box;
+    padding:10px;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    &>div{
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:10px;
+        &>img{
+            width:20px;
+            object-fit:contain;
+        }
+    }
+`
+
+export const MobileFriendlySearch = styled.div`
+    display:none;
+    width:100%;
+    box-sizing:border-box;
+    padding:10px;
+    justify-content:space-between;
+    align-items:center;
 `

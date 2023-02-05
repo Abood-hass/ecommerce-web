@@ -10,6 +10,7 @@ import { BrandsHeader, BrandsOptions, ConditionHeader, ConditionOptions, Feature
 import Pagination from '../../../Components/Pagination'
 import UsedFilter from '../../../Components/UsedFilter'
 import SubscribeBar from '../../../Components/SubscribeBar'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function Index() {
@@ -17,6 +18,7 @@ export default function Index() {
     const [page, setPage] = useState(0)
     const [itemsCount, setItemsCount] = useState(6)
 
+    const nav = useNavigate()
 
     const [verify, setVerified] = useState(true)
 
@@ -78,12 +80,12 @@ export default function Index() {
                         <UsedFilter delete={onChangeFilter} filters={filters} />
                         {switchView ?
                             <SearchResultsItemsList typeView={switchView} >
-                                {data.map((product, index) => <ProductResultSearchCard index={index} {...product} />)}
+                                {data.map((product, index) => <ProductResultSearchCard index={index} {...product} onClick={_ => nav("/explore/product", { state: product })} />)}
 
                             </SearchResultsItemsList>
                             :
                             <SearchResultsItemsGrid>
-                                {data.map((product, index) => <ProductResultSearchGrid index={index} {...product} />)}
+                                {data.map((product, index) => <ProductResultSearchGrid index={index} {...product} onClick={_ => nav("/explore/product", { state: product })} />)}
                             </SearchResultsItemsGrid>}
                     </div>
                 </SearchResultsBody>

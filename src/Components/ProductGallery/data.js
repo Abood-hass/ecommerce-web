@@ -17,27 +17,60 @@ import image16 from '../../Assest/Images/Gallery/AdImageNum12.png'
 
 import HeaderNum1 from '../../Assest/Images/Gallery/HeaderNum1.jfif'
 import HeaderNum2 from '../../Assest/Images/Gallery/HeaderNum2.jfif'
+import IdRandomGenerator from '../../Utils/IdRandomGenerator'
 
 export const HeaderImg1 = HeaderNum1
 export const HeaderImg2 = HeaderNum2
 
 export const Data1 = [
-    { name: "Soft chairs", price: 19, img: image1 },
-    { name: "Sofa & chair", price: 19, img: image2 },
-    { name: "Kitchen dishes", price: 19, img: image3 },
-    { name: "Smart watches", price: 19, img: image4 },
-    { name: "Blenders", price: 19, img: image5 },
-    { name: "Blenders", price: 19, img: image6 },
-    { name: "Blenders", price: 19, img: image7 },
-    { name: "Blenders", price: 19, img: image8 },
+    {
+        id: IdRandomGenerator(), name: "Soft chairs", price: 19, img: image1
+    },
+    {
+        id: IdRandomGenerator(), name: "Sofa & chair", price: 19, img: image2
+    },
+    {
+        id: IdRandomGenerator(), name: "Kitchen dishes", price: 19, img: image3
+    },
+    {
+        id: IdRandomGenerator(), name: "Smart watches", price: 19, img: image4
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image5
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image6
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image7
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image8
+    },
 ]
 export const Data2 = [
-    { name: "Soft chairs", price: 19, img: image9 },
-    { name: "Sofa & chair", price: 19, img: image10 },
-    { name: "Kitchen dishes", price: 19, img: image11 },
-    { name: "Smart watches", price: 19, img: image12 },
-    { name: "Blenders", price: 19, img: image13 },
-    { name: "Blenders", price: 19, img: image14 },
-    { name: "Blenders", price: 19, img: image15 },
-    { name: "Blenders", price: 19, img: image16 },
+    {
+        id: IdRandomGenerator(), name: "Soft chairs", price: 19, img: image9
+    },
+    {
+        id: IdRandomGenerator(), name: "Sofa & chair", price: 19, img: image10
+    },
+    {
+        id: IdRandomGenerator(), name: "Kitchen dishes", price: 19, img: image11
+    },
+    {
+        id: IdRandomGenerator(), name: "Smart watches", price: 19, img: image12
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image13
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image14
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image15
+    },
+    {
+        id: IdRandomGenerator(), name: "Blenders", price: 19, img: image16
+    },
 ]

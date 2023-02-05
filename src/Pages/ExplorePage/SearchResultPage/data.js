@@ -4,13 +4,17 @@ import img3 from '../../../Assest/Images/Products/image3.png'
 import img4 from '../../../Assest/Images/Products/image4.png'
 import img5 from '../../../Assest/Images/Products/image5.png'
 import img6 from '../../../Assest/Images/Products/image6.png'
+import IdRandomGenerator from '../../../Utils/IdRandomGenerator'
 
 
 export const ProductData = [
     {
-        id: 1,
-        name: "Canon Cmera EOS 2000, Black 10x zoom",
+        id: IdRandomGenerator(),
         img: img1,
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
         discountPrice: 1200,
@@ -19,7 +23,11 @@ export const ProductData = [
         rate: 4
     },
     {
-        id: 2,
+        id: IdRandomGenerator(),
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img2, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -29,7 +37,11 @@ export const ProductData = [
         rate: 2
     },
     {
-        id: 3,
+        id: IdRandomGenerator(),
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -38,7 +50,8 @@ export const ProductData = [
         shippingPrice: 25,
         rate: 3
     }, {
-        id: 4,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
+
         name: "Canon Cmera EOS 2000, Black 10x zoom",
         img: img4,
         details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -49,7 +62,8 @@ export const ProductData = [
         rate: 4
     },
     {
-        id: 5,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
+
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img5, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -59,7 +73,8 @@ export const ProductData = [
         rate: 2
     },
     {
-        id: 6,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
+
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img6, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -69,7 +84,8 @@ export const ProductData = [
         rate: 3
     },
     {
-        id: 7,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
+
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -78,7 +94,8 @@ export const ProductData = [
         shippingPrice: 25,
         rate: 3
     }, {
-        id: 8,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
+
         name: "Canon Cmera EOS 2000, Black 10x zoom",
         img: img1,
         details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -89,7 +106,8 @@ export const ProductData = [
         rate: 4
     },
     {
-        id: 9,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
+
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img2, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -99,7 +117,7 @@ export const ProductData = [
         rate: 2
     },
     {
-        id: 10,
+        id: IdRandomGenerator(), productName: "Smart watches", offer: 25, price: 102, countOfStack: 50,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -108,7 +126,11 @@ export const ProductData = [
         shippingPrice: 25,
         rate: 3
     }, {
-        id: 11,
+        id: IdRandomGenerator(),
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         name: "Canon Cmera EOS 2000, Black 10x zoom",
         img: img4,
         details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -119,7 +141,11 @@ export const ProductData = [
         rate: 4
     },
     {
-        id: 12,
+        id: IdRandomGenerator(),
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img5, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -129,7 +155,11 @@ export const ProductData = [
         rate: 2
     },
     {
-        id: 13,
+        id: IdRandomGenerator(),
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img6, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,
@@ -139,7 +169,11 @@ export const ProductData = [
         rate: 3
     },
     {
-        id: 14,
+        id: IdRandomGenerator(),
+        productName: "Smart watches",
+        offer: 25,
+        price: 102,
+        countOfStack: 50,
         name: "GoPro HERO6 4K Action Camera - Black",
         img: img3, details: `Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua`,

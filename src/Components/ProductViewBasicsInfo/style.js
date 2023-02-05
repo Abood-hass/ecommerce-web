@@ -15,13 +15,13 @@ export const ProductViewBasicsInfo = styled.div`
     padding:20px;
 `
 export const ProductViewImage = styled.img`
-    height: 380px;
     width: 380px; 
     background: #FFFFFF; 
     border: 1px solid #E3E8EE;
     box-sizing:border-box;
     border-radius: 6px;
     padding:10px;
+    object-fit:contain;
 `
 
 export const ProductViewImagesViewer = styled.div`
@@ -38,6 +38,7 @@ export const ProductViewImagesGroup = styled.div`
         border: 1px solid #E3E8EE;
         border-radius: 6px;
         boxsizing:border-box;
+        object-fit:contain;
     }
     display:flex;
     overflow-x:scroll;
@@ -58,10 +59,10 @@ export const ProductViewInfoAndPrice = styled.div`
     flex-direction:column;
     gap:15px;
     mix-height: 80%;
-    width: 100%;
+    width: 35vw;
     &>span{
         font-weight: 600;
-        font-size: 20px;
+        font-size: 20px; 
     }
 `
 
@@ -128,7 +129,7 @@ export const ProductViewSpliterInfo = styled.hr`
 
 export const SupplierInfo = styled.div`
     padding:20px;
-    height: 325px;
+    height: fit-content;
     width: 300px; 
     background: #FFFFFF; 
     border: 1px solid #E3E8EE;

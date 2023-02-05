@@ -6,15 +6,17 @@ import RelatedProducts from '../../../Components/RelatedProducts'
 import SuperDiscount from '../../../Components/SuperDiscount'
 import { MayYouLike, MayYouLikeItem, ProductViewContainer, ProductViewDetailedOption } from './style'
 import { RecommendedItems } from './data'
+import { useLocation } from 'react-router-dom'
 
 
-export default function index() {
+export default function Index() {
 
+    const { state: product } = useLocation();
 
     return (
         <ProductViewContainer>
             <ProductPath path={["Technology", "Smart Phones", "Ipohnes",]} />
-            <ProductViewBasicsInfo />
+            <ProductViewBasicsInfo {...product} />
             <ProductViewDetailedOption>
                 <div style={{ padding: " 20px 0px" }}>
                     <ProductInfoTab />

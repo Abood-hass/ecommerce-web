@@ -12,7 +12,7 @@ export const SuperDiscountContainer = styled.div`
 
 export const SuperDiscountTrapezoid = styled.div`
     position:absolute;
-    border-bottom: 160px solid #237CFF;
+    border-bottom: 160px solid #237CFF ;
 	border-left: 0px solid transparent;
 	border-right: 35px solid transparent; 
 	width: 60%;

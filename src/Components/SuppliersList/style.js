@@ -16,8 +16,14 @@ export const SuppliersListGroup = styled.div`
     grid-template-columns: repeat(5,auto);
     row-gap: 20px;
     margin: 30px -10px;
-     height: fit-content;
+    height: fit-content;
     width: 100%;
+    @media (max-width: 1200px){
+    grid-template-columns: repeat(3,auto);
+    }
+    @media (max-width: 700px){
+    grid-template-columns: repeat(2,auto);
+    }
 `
 
 export const SuppliersListItem = styled.div`

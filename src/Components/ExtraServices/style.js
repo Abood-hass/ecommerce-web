@@ -9,9 +9,10 @@ export const ExtraServicesHeader = styled.span.attrs(_ => ({ children: "Our extr
     font-size: 24px;
 `
 export const ExtraServicesGroup = styled.div`
-    margin: 30px -35px;
+    margin: 30px -2vw;
     display:grid;
-    grid-template-columns: repeat(4,auto); 
+    grid-template-columns: repeat(4,auto);
+    overflow:hidden;
 `
 
 export const ExtraServicesView = (props) => {
@@ -31,7 +32,7 @@ export const ExtraServicesItemContainer = styled.div`
     background: #fff;
     border: 1px solid #E0E0E0;
     border-radius: 6px;
-    width:280px;
+    width:20vw;
     height:200px;
     margin:auto;
     &>img{
@@ -47,6 +48,9 @@ export const ExtraServicesItemContainer = styled.div`
         box-sizing:border-box;
         padding: 20px 30px;
         font-weight:500;
+        @media (max-width: 1050px){
+            font-size: 15px;
+        }
     }
 `
 

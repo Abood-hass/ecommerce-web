@@ -1,11 +1,10 @@
 import styled from "styled-components";
 
 const OfferCardContainer = styled.div`
- 
+    cursor:pointer;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    height:100%;
+    align-items:center; 
     box-sizing: border-box;
     padding: 10px 20px;
     width:100%;
@@ -16,6 +15,10 @@ const OfferCardImage = styled.img`
     height:140px;
     width:100px;
     object-fit:contain;
+    @media (max-width: 1050px){
+        height:80px;
+        width:60px;
+    }
 `
 
 const OfferCardOfferValue = styled.span` 
@@ -34,10 +37,13 @@ const OfferCardOfferValue = styled.span`
     font-size: 18;
     background: #FFE3E3;
     border-radius: 18px;
+    @media (max-width: 1050px){
+        font-size: 10px;
+    }
 `
 
-export const OfferCard = ({ src, productName, offer }) => {
-    return <OfferCardContainer>
+export const OfferCard = ({ src, productName, offer, onClick }) => {
+    return <OfferCardContainer onClick={onClick}>
         <OfferCardImage src={src} />
         <p>{productName}</p>
         <OfferCardOfferValue children={offer} />

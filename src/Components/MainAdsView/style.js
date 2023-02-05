@@ -47,6 +47,9 @@ export const MainAdsViewListItemText = styled.span`
     font-size: 16px;
     margin:auto;
     text-align: left;
+    @media (max-width: 1050px){
+        font-size: 12px;
+    }
 `
 
 export const MainAdsViewItemViewedContainer = styled.div`
@@ -132,11 +135,10 @@ export const DiscountsViewGroup = styled.div`
 `
 
 export const DiscountsViewItem = styled.div`
-    padding:  10px 100px 30px 30px;
+    padding:  10px 50px 30px 30px;
     color:  white; 
     box-sizing: border-box;
-    height: 110px;
-    width: 100%;
+    height: 110px; 
     font-size:18px;
     border-radius: 6px;
     text-align:left;
@@ -152,7 +154,10 @@ export const DiscountsViewItem = styled.div`
     } 
     &:nth-of-type(3){
         background: #F38332;
-    } 
+    }
+    @media (max-width: 1050px){
+        font-size: 15px;
+    }
 `
 
 const StartupImg = styled.img`

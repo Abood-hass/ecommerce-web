@@ -2,8 +2,11 @@ import React, { useEffect, useState } from 'react'
 import { OfferBoardBody, OfferBoardContainer, OfferBoardCounter, OfferBoardCounterContainer, OfferBoardCounterDeadLine, OfferBoardCounterItemsContainer, OfferBoardTitle } from './style'
 import OfferCard from './OfferCard'
 import { OffersData } from './data'
+import { useNavigate } from 'react-router-dom'
 
 export default function Index() {
+    const navigate = useNavigate()
+
     const second = 1;
     const minute = 60 * second;
     const hour = 60 * minute;
@@ -21,30 +24,6 @@ export default function Index() {
 
 
 
-    function updateTime() {
-        setTimes(prevStat => --prevStat);
-        Timer.map((item, index) => {
-            console.log(item);
-            if (item.val === 0) {
-                Timer[1 - index].val -= 1;
-                return item.val += (1 * Timer[1 - index].unit)
-            } else {
-                return item.val
-            }
-        })
-
-    }
-
-    // useEffect(() => {
-    //     const interval = setInterval(
-    //         updateTime
-    //         , 1000);
-
-    //     return () => {
-    //         clearInterval(interval);
-    //     };
-    // }, []);
-
     const OfferBoardCounterDeadLine = () => {
         return <OfferBoardCounterContainer>
             <OfferBoardTitle children="Deals and offers" />
@@ -59,7 +38,7 @@ export default function Index() {
     return (
         <OfferBoardContainer>
             <OfferBoardCounterDeadLine></OfferBoardCounterDeadLine>
-            {OffersData.map((item, index) => <OfferCard key={index} {...item} />)}
+            {OffersData.map((item, index) => <OfferCard onClick={_ => navigate("/explore/product", { state: item })} key={index} {...item} />)}
         </OfferBoardContainer>
     )
 }

@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import LoginFormView from '../../../Components/LoginFormView'
 
-export default function index() {
+export default function Index() {
+
     return (
-        // <LoginPageContainer>
         <LoginFormView />
-        // <LoginFooter /></LoginPageContainer>
     )
 }
 

@@ -19,18 +19,25 @@ export const OfferBoardCounterContainer = styled.div`
     align-items:left;
     height:100%;
     width:100%;
+    
 `
 export const OfferBoardTitle = styled.p`  
     font-size: 30px;
     font-weight: 600; 
     text-align: left;
     margin:0px;
+    @media (max-width: 1050px){
+        font-size: 20px;
+    }
 `
 
 export const OfferBoardBody = styled.p`
     font-size: 25px;
     font-weight: 300; 
     margin:0px;
+    @media (max-width: 1050px){
+        font-size: 15px;
+    }
 `
 export const OfferBoardCounter = styled.div`
     box-sizing: border-box;

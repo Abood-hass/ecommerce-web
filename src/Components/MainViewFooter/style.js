@@ -12,6 +12,9 @@ export const FooterContainer = styled.div`
     box-sizing: border-box;
     padding: 50px 6% 0px 6%;
     background:#fff;
+    @media (max-width: 1000px){
+        display:none;
+    }
     grid-template-columns:repeat(6,auto);
     display:flex;
     justify-content:space-around;
@@ -19,6 +22,7 @@ export const FooterContainer = styled.div`
     height:300px;
     margin:auto;
     gap:60px;
+    
 `
 
 
@@ -49,12 +53,16 @@ export const FooterBrandSoicalMedia = styled.div`
 
 
 export const FooterLinksGroup = styled.div`
-        width:fit-content;
+    width:fit-content;
+    
     &>span{ 
         font-size: 16px;
         font-weight: 400; 
         text-align: left;
         color:#8B96A5;
+        @media (max-width: 1050px){
+        font-size: 12px;
+    }
     }
     &>span:nth-of-type(1){
         font-weight: 500; 

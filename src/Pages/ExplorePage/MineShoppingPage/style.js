@@ -5,7 +5,7 @@ export const MainShoppingContainer = styled.div`
         cursor:pointer;
     }
     background: #F6FaFd;
-    width: 100%;
+    width: 98vw;
     margin:auto;
     &>div{
         width:88%;

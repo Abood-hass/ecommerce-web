@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { ProductViewBasicsInfo, ProductViewImage, ProductViewImagesGroup, ProductViewImagesViewer, ProductViewInfoAndPrice, ProductViewPriceForPisces, ProductViewRowInfo, ProductViewSpliterInfo, SupplierAddress, SupplierInfo, SupplierInfoRow, SupplierName, SupplierRequestBn } from './style'
 import ProductRate from '../../Components/ProductRate'
 import Button from '../../Components/Button'
@@ -13,13 +13,21 @@ import Image5 from '../../Assest/Images/Suppliers/Image5.png'
 import approval from '../../Assest/Images/icon-approval.png'
 import globe from '../../Assest/Images/icon-globe.png'
 import { LightBlue } from '../ColorSchema'
+import { CartCont, } from '../../ContextApi/CartContext'
 
 export default function Index(props) {
     const [currentImage, setCurrentImage] = useState(0);
     const imgs = [
-        "https://s3-alpha-sig.figma.com/img/ce60/bd07/ba64362f07075659795d0e6c24963920?Expires=1675641600&Signature=iT8ngAZfNJtQWTTUPHYHekQ1PlQCvVCzkyAqkNbVnw5R6Wk0bmXl4~rqJWuvzLhyKVnQh7rtDA3JAwib~i7ind4UfcPCSYGQ5v46aJH~qxyh062zU-QNk5X~hqvB-D8ByNre0EyslaXM7IB77KNWlgE59K9TWlNcntRi0PuCXuRGey1W~Q7owlF~sItzBngdu1SY8pX15q~GQ2EYMUdbGzAm0LdNOrE6SiJZJIiVek2RBzq5--I1iSlvu1dHQUm6xUTxL-mAxcGtJkO0UIXa39BtbDUXj92GsHtuv1BSgL-zLf7gNpXi9SM1OPkHab1KBCkdZdDzROtv3E5~l73laQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
-        "https://s3-alpha-sig.figma.com/img/361f/f615/0b669765823c4c4c5af81ab06e2a1158?Expires=1675641600&Signature=IYb75~h3BSuYbph7dqoLGHOxmJtqashqDXqBQcddFSHrVVHJKpZgQA4kP1Ipv-3iJdN~CEsmuhXOyp7yYPbDRRuEzNQG~kZ80ZIruk8RmzLa-WkcrceUrfi7HEwnsgD-bCkDEj0-IDy7dVsTeGXpv8BlXNrL4pxAhV53uhKQjuyjlB7WHem-ePvPtIf7~PshEXHT9sNEY3Po9Q2rnD1fD1wuaUjLdD~C-0rNwFMva9i0Kk8bw1ECOoc19fWwYOVgeflG1X39v2FhOpP6V69oZ3VHqTxAcxl2uy8dZeBY7mV5UzFbqDWYDxfj7~d1b3PF7bpmBHgosYx8XtovOPs08Q__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+        props.img,
+        props.img,
+        props.img,
     ]
+
+    const { cart, addToCart } = useContext(CartCont)
+
+    const product = { ...props };
+
+
     return (
         <ProductViewBasicsInfo>
             <ProductViewImagesViewer>
@@ -30,7 +38,7 @@ export default function Index(props) {
             </ProductViewImagesViewer>
             <ProductViewInfoAndPrice>
                 <span>
-                    {props.titleProduct || "Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle"}
+                    {props.productName || "Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle"}
                 </span>
                 <ProductRate basicsInfo={true} />
                 <ProductViewPriceForPisces>
@@ -63,10 +71,10 @@ export default function Index(props) {
 
             <SupplierInfo>
                 <SupplierName>
-                    <img src={props.img || iconSupplier} alt='' />
+                    <img src={props.supplierImg || iconSupplier} alt='' />
                     <div>
                         <span>Supplier</span><br />
-                        <span>{props.img || "Guanjoi Trading LLC"}</span>
+                        <span>{props.supplierName || "Guanjoi Trading LLC"}</span>
                     </div>
                 </SupplierName>
                 <ProductViewSpliterInfo />
@@ -92,7 +100,8 @@ export default function Index(props) {
                 </SupplierAddress>
                 <SupplierRequestBn>
                     <Button style={{ fontSize: '16px' }} label={"Send inquiry"} />
-                    <Button BG={"#fff"} labelColor={LightBlue} style={{ fontSize: '16px' }} label={"Seller’s profile"} />
+                    <Button BG={"#fff"} labelColor={LightBlue} style={{ fontSize: '16px' }} label={"Seller’s profile"} onClick={_ => console.log(cart)} />
+                    <Button BG={"green"} style={{ fontSize: '16px' }} label={"Add to Cart"} onClick={() => addToCart(product)} />
                 </SupplierRequestBn>
             </SupplierInfo>
         </ProductViewBasicsInfo>
