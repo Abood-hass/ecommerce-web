@@ -20,7 +20,13 @@ export const LoginFormContainer = styled.form`
         margin-top: 0px;
     }
 `
-
+export const ErrorMsg = styled.div`
+    background:red;
+    color:white;
+    text-align:center;
+    border-radius: 10px;
+    padding: 5px 0; 
+`
 
 export const LoginFormHeader = styled.div`
     width: 100%;

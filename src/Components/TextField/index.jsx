@@ -33,7 +33,7 @@ export default function Index(props) {
     const inputTag = (<TextFieldInput
         minLength={props.minLength}
         maxLength={props.maxLength}
-        value={props.value}
+        value={props.value || ""}
         onChange={onChange}
         placeholder={props.placeholder || "Enter Username"}
         type={props.type === "password" ? eyeClosed ? "password" : ("text") : props.type}
