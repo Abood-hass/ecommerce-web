@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { AnotherLoginButtons, ErrorMsg, LoginFormContainer, LoginFormHeader, RegisterOption, RegisterOptionButton } from './style'
 import TextField from '../../Components/TextField'
 import CheckBox from '../../Components/CheckBox'
@@ -9,7 +9,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { CallAuthAPI } from '../../CustomHooks/CallAuthAPI'
 import AuthContext from '../../ContextApi/AuthContext'
 
-export default function Index({ newUserInfo }) {
+export default function Index() {
     const navigate = useNavigate()
 
     const [username, setUsername] = useState("");
@@ -18,10 +18,6 @@ export default function Index({ newUserInfo }) {
     const [loading, setLoading] = useState(false);
     const [rememberMeChack, setRememberMeChack] = useState(true);
 
-    useEffect(_ => {
-        setUsername(newUserInfo?.email)
-        setPassword(newUserInfo?.password)
-    }, [])
     const onChangeUsername = (event) => {
         setErrorMsg("")
         let value = event.target.value;

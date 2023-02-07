@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { ErrorMsg, LoginFormContainer, LoginFormHeader, RegisterOption, RegisterOptionButton, TwoInputsContainer } from '../LoginFormView/style'
 import TextField from '../../Components/TextField'
 import CheckBox from '../../Components/CheckBox'
