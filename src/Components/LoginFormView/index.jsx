@@ -7,7 +7,7 @@ import OrLine from '../../Components/OrLine'
 import * as yup from 'yup'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { CallAuthAPI } from '../../CustomHooks/CallAuthAPI'
-import AuthContext from '../../ContextApi/AuthContext'
+// import AuthContext from '../../ContextApi/AuthContext'
 
 export default function Index() {
     const navigate = useNavigate()
@@ -38,7 +38,7 @@ export default function Index() {
         // .matches("^(?=.*[A-Za-z])(?=.*)[A-Za-z]{6,20}$", "Write password in right form")
     });
 
-    const { setToken } = AuthContext()
+    // const { setToken } = AuthContext()
     const onLoginSubmit = (e) => {
         e.preventDefault()
         setErrorMsg("")
@@ -57,7 +57,7 @@ export default function Index() {
                     setLoading(false)
 
                     if (userToken) {
-                        setToken(userToken)
+                        // setToken(userToken)
 
                         // AddToken(userToken)
                         navigate("/explore")
