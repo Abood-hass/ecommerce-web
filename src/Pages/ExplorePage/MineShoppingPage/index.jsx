@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { MainShoppingContainer, MainShoppingContainerBody } from './style'
 
 const OffersBoard = React.lazy(() => import('../../../Components/OffersBoard'));

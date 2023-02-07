@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import { RecommendedItems } from './data'
 import { useLocation } from 'react-router-dom'
 import { MayYouLike, MayYouLikeItem, ProductViewContainer, ProductViewDetailedOption } from './style'
