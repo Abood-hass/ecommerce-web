@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { MainShoppingContainer } from '../MineShoppingPage/style'
-import ProductPath from '../../../Components/ProductPath'
-import SearchResultHeader from '../../../Components/SearchResultHeader'
-import ProductResultSearchCard from '../../../Components/ProductResultSearchCard'
-import ProductResultSearchGrid from '../../../Components/ProductResultSearchGrid'
-import SearchFilter from '../../../Components/SearchFilter'
 import { SearchResultsBody, SearchResultsItemsGrid, SearchResultsItemsList } from './style'
 import { BrandsHeader, BrandsOptions, ConditionHeader, ConditionOptions, FeaturesHeader, FeaturesOptions, FilterHeader, FilterOptions, ProductData } from './data'
-import Pagination from '../../../Components/Pagination'
-import UsedFilter from '../../../Components/UsedFilter'
-import SubscribeBar from '../../../Components/SubscribeBar'
-import { useNavigate } from 'react-router-dom'
+
+
+const ProductPath = React.lazy(() => import('../../../Components/ProductPath'));
+const SearchResultHeader = React.lazy(() => import('../../../Components/ProductPath'));
+const ProductResultSearchCard = React.lazy(() => import('../../../Components/ProductResultSearchCard'));
+const ProductResultSearchGrid = React.lazy(() => import('../../../Components/ProductResultSearchGrid'));
+const SearchFilter = React.lazy(() => import('../../../Components/SearchFilter'));
+const Pagination = React.lazy(() => import('../../../Components/Pagination'));
+const UsedFilter = React.lazy(() => import('../../../Components/UsedFilter'));
+const SubscribeBar = React.lazy(() => import('../../../Components/SubscribeBar'));
+
 
 
 export default function Index() {

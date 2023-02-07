@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { MainShoppingContainer, MainShoppingContainerBody } from './style'
-import OffersBoard from '../../../Components/OffersBoard'
-import MainAdsView from '../../../Components/MainAdsView'
-import ProductGallery from '../../../Components/ProductGallery'
-import ContactUsBox from '../../../Components/ContactUsBox'
-import RecommendedItems from '../../../Components/RecommendedItems'
-import ExtraServices from '../../../Components/ExtraServices'
-import SuppliersList from '../../../Components/SuppliersList'
-import SubscribeBar from '../../../Components/SubscribeBar'
+
+const OffersBoard = React.lazy(() => import('../../../Components/OffersBoard'));
+const MainAdsView = React.lazy(() => import('../../../Components/MainAdsView'));
+const ProductGallery = React.lazy(() => import('../../../Components/ProductGallery'));
+const ContactUsBox = React.lazy(() => import('../../../Components/ContactUsBox'));
+const RecommendedItems = React.lazy(() => import('../../../Components/RecommendedItems'));
+const ExtraServices = React.lazy(() => import('../../../Components/ExtraServices'));
+const SuppliersList = React.lazy(() => import('../../../Components/SuppliersList'));
+const SubscribeBar = React.lazy(() => import('../../../Components/SubscribeBar'));
 
 export default function Index() {
+
     return (
+
         <>
             <MainShoppingContainer>
                 <MainShoppingContainerBody>

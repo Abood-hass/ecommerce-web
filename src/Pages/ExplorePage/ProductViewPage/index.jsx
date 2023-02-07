@@ -1,12 +1,13 @@
-import React from 'react'
-import ProductPath from '../../../Components/ProductPath'
-import ProductViewBasicsInfo from '../../../Components/ProductViewBasicsInfo'
-import ProductInfoTab from '../../../Components/ProductInfoTab'
-import RelatedProducts from '../../../Components/RelatedProducts'
-import SuperDiscount from '../../../Components/SuperDiscount'
-import { MayYouLike, MayYouLikeItem, ProductViewContainer, ProductViewDetailedOption } from './style'
+import React, { Suspense } from 'react'
 import { RecommendedItems } from './data'
 import { useLocation } from 'react-router-dom'
+import { MayYouLike, MayYouLikeItem, ProductViewContainer, ProductViewDetailedOption } from './style'
+
+const ProductPath = React.lazy(() => import('../../../Components/ProductPath'));
+const ProductViewBasicsInfo = React.lazy(() => import('../../../Components/ProductViewBasicsInfo'));
+const ProductInfoTab = React.lazy(() => import('../../../Components/ProductInfoTab'));
+const RelatedProducts = React.lazy(() => import('../../../Components/RelatedProducts'));
+const SuperDiscount = React.lazy(() => import('../../../Components/SuperDiscount'));
 
 
 export default function Index() {
@@ -14,6 +15,7 @@ export default function Index() {
     const { state: product } = useLocation();
 
     return (
+
         <ProductViewContainer>
             <ProductPath path={["Technology", "Smart Phones", "Ipohnes",]} />
             <ProductViewBasicsInfo {...product} />

@@ -1,29 +1,30 @@
-import React, { useContext } from 'react'
+import React, { Suspense, useContext } from 'react'
 import MainViewHeader from '../../Components/MainViewHeader'
-import { CartPageContianer } from './style'
-import CartDisplay from '../../Components/CartDisplay'
 import MainViewFooter from '../../Components/MainViewFooter'
-import SuperDiscount from '../../Components/SuperDiscount'
-import RelatedProducts from '../../Components/RelatedProducts'
-import { AuthContext } from '../../ContextApi/authContext'
+import { CartPageContianer } from './style'
 import { Navigate } from 'react-router-dom'
 
-export default function Index() {
-    const value = useContext(AuthContext)
+const CartDisplay = React.lazy(() => import('../../Components/CartDisplay'));
+const SuperDiscount = React.lazy(() => import('../../Components/SuperDiscount'));
+const RelatedProducts = React.lazy(() => import('../../Components/RelatedProducts'));
 
+export default function Index() {
+    // const value = useContext(AuthContext)
     return (
 
-        (value.token) ?
-            <>
-                <MainViewHeader HideSearchBar HideSecond />
+        // (value.token) ?
+        <>
+            <MainViewHeader HideSearchBar HideSecond />
+            <Suspense fallback={<div>Loading ...</div>}>
                 <CartPageContianer>
                     <CartDisplay />
                     <SuperDiscount />
                     <RelatedProducts />
                 </CartPageContianer>
-                <MainViewFooter />
-            </>
-            : <Navigate to="/" replace={true} />
+            </Suspense>
+            <MainViewFooter />
+        </>
+        // : <Navigate to="/" replace={true} />
 
     )
 }

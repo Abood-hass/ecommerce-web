@@ -6,31 +6,32 @@ import RegisterPage from './Pages/LoginAndRegister/RegisterPage'
 import MineShoppingPage from './Pages/ExplorePage/MineShoppingPage'
 import SearchResultPage from './Pages/ExplorePage/SearchResultPage'
 import ProductViewPage from './Pages/ExplorePage/ProductViewPage'
+import ErrorPage from './Pages/ErrorPage'
 import CartPage from './Pages/CartPage'
 import { darkTheme, lightTheme } from './theme';
 import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { AuthContext } from './ContextApi/authContext';
+// import { AuthContext } from './ContextApi/authContext';
 import CartContext from './ContextApi/CartContext';
+import ErrorBundle from './Components/ErrorBundle';
 
 
 function App() {
   const [theme] = useState("light");
   const isDarkTheme = theme === "dark";
-  // const toggleTheme = () => setTheme(isDarkTheme ? "light" : "dark");
 
-  const [token, setToken] = useState(localStorage.getItem("token"));
+  // const [token, setToken] = useState(localStorage.getItem("token"));
 
-  const setUserToken = (token) => {
-    localStorage.setItem("token", token);
-    setToken(token)
-  }
+  // const setUserToken = (token) => {
+  //   localStorage.setItem("token", token);
+  //   setToken(token)
+  // }
 
 
   return (
-    <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
-      <Router>
-        <AuthContext.Provider value={{ token, setToken: setUserToken }} >
+    <ErrorBundle>
+      <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
+        <Router>
           <CartContext>
             <Routes>
               <Route path='/' element={<Navigate to={"/user"} />} />
@@ -44,12 +45,13 @@ function App() {
                 <Route path='product' element={<ProductViewPage />} />
               </Route>
               <Route path='/cart' element={<CartPage />} />
+              <Route path='*' element={<ErrorPage />} />
             </Routes>
 
           </CartContext>
-        </AuthContext.Provider>
-      </Router>
-    </ThemeProvider>
+        </Router>
+      </ThemeProvider>
+    </ErrorBundle>
   );
 }
 
