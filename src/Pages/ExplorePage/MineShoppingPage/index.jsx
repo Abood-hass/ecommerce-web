@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom';
-import { AuthCont } from '../../../ContextApi/AuthContext';
+import { AuthCont } from '../../../ContextApi/AuthReducer';
 import { MainShoppingContainer, MainShoppingContainerBody } from './style'
 
 const OffersBoard = React.lazy(() => import('../../../Components/OffersBoard'));

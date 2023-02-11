@@ -14,7 +14,7 @@ import { ThemeProvider } from 'styled-components';
 // import { AuthContext } from './ContextApi/authContext';
 import CartContext from './ContextApi/CartContext';
 import ErrorBundle from './Components/ErrorBundle';
-import AuthContext from './ContextApi/AuthContext';
+import AuthContext from './ContextApi/AuthReducer';
 
 
 function App() {
