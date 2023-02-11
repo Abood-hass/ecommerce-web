@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { AnotherLoginButtons, ErrorMsg, LoginFormContainer, LoginFormHeader, RegisterOption, RegisterOptionButton } from './style'
 import TextField from '../../Components/TextField'
 import CheckBox from '../../Components/CheckBox'
@@ -7,10 +7,12 @@ import OrLine from '../../Components/OrLine'
 import * as yup from 'yup'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { CallAuthAPI } from '../../CustomHooks/CallAuthAPI'
+import { AuthCont } from '../../ContextApi/AuthContext'
 // import AuthContext from '../../ContextApi/AuthContext'
 
 export default function Index() {
     const navigate = useNavigate()
+    const { setToken, } = useContext(AuthCont)
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -57,7 +59,7 @@ export default function Index() {
                     setLoading(false)
 
                     if (userToken) {
-                        // setToken(userToken)
+                        setToken(userToken)
 
                         // AddToken(userToken)
                         navigate("/explore")

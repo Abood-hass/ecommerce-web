@@ -14,6 +14,7 @@ import { ThemeProvider } from 'styled-components';
 // import { AuthContext } from './ContextApi/authContext';
 import CartContext from './ContextApi/CartContext';
 import ErrorBundle from './Components/ErrorBundle';
+import AuthContext from './ContextApi/AuthContext';
 
 
 function App() {
@@ -33,21 +34,22 @@ function App() {
       <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme} >
         <Router>
           <CartContext>
-            <Routes>
-              <Route path='/' element={<Navigate to={"/user"} />} />
-              <Route path='/user' element={<LoginAndRegister />}>
-                <Route index={true} element={<LoginPage />} />
-                <Route path="register" element={<RegisterPage />} />
-              </Route>
-              <Route path='/explore' element={<ExplorePage />} >
-                <Route index={true} element={<MineShoppingPage />} />
-                <Route path='search' element={<SearchResultPage />} />
-                <Route path='product' element={<ProductViewPage />} />
-              </Route>
-              <Route path='/cart' element={<CartPage />} />
-              <Route path='*' element={<ErrorPage />} />
-            </Routes>
-
+            <AuthContext>
+              <Routes>
+                <Route path='/' element={<Navigate to={"/user"} />} />
+                <Route path='/user' element={<LoginAndRegister />}>
+                  <Route index={true} element={<LoginPage />} />
+                  <Route path="register" element={<RegisterPage />} />
+                </Route>
+                <Route path='/explore' element={<ExplorePage />} >
+                  <Route index={true} element={<MineShoppingPage />} />
+                  <Route path='search' element={<SearchResultPage />} />
+                  <Route path='product' element={<ProductViewPage />} />
+                </Route>
+                <Route path='/cart' element={<CartPage />} />
+                <Route path='*' element={<ErrorPage />} />
+              </Routes>
+            </AuthContext>
           </CartContext>
         </Router>
       </ThemeProvider>
