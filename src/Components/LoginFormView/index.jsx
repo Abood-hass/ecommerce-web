@@ -7,7 +7,7 @@ import OrLine from '../../Components/OrLine'
 import * as yup from 'yup'
 import { NavLink, useNavigate } from 'react-router-dom'
 import { CallAuthAPI } from '../../CustomHooks/CallAuthAPI'
-import { AuthCont } from '../../ContextApi/AuthContext'
+import { AuthCont } from '../../ContextApi/AuthReducer'
 // import AuthContext from '../../ContextApi/AuthContext'
 
 export default function Index() {
