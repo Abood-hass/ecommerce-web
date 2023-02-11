@@ -6,7 +6,7 @@ import { BrandsHeader, BrandsOptions, ConditionHeader, ConditionOptions, Feature
 
 
 const ProductPath = React.lazy(() => import('../../../Components/ProductPath'));
-const SearchResultHeader = React.lazy(() => import('../../../Components/ProductPath'));
+const SearchResultHeader = React.lazy(() => import('../../../Components/SearchResultHeader'));
 const ProductResultSearchCard = React.lazy(() => import('../../../Components/ProductResultSearchCard'));
 const ProductResultSearchGrid = React.lazy(() => import('../../../Components/ProductResultSearchGrid'));
 const SearchFilter = React.lazy(() => import('../../../Components/SearchFilter'));

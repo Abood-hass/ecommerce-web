@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Navigate } from 'react-router-dom';
+import { AuthCont } from '../../../ContextApi/AuthContext';
 import { MainShoppingContainer, MainShoppingContainerBody } from './style'
 
 const OffersBoard = React.lazy(() => import('../../../Components/OffersBoard'));
@@ -11,23 +13,24 @@ const SuppliersList = React.lazy(() => import('../../../Components/SuppliersList
 const SubscribeBar = React.lazy(() => import('../../../Components/SubscribeBar'));
 
 export default function Index() {
+    const { checkToken, } = useContext(AuthCont)
 
     return (
-
-        <>
-            <MainShoppingContainer>
-                <MainShoppingContainerBody>
-                    <MainAdsView />
-                    <OffersBoard />
-                    <ProductGallery filter={true} group={1} />
-                    <ProductGallery header={"Consumer electronics and gadgets"} group={0} />
-                    <ContactUsBox />
-                    <RecommendedItems />
-                    <ExtraServices />
-                    <SuppliersList />
-                </MainShoppingContainerBody>
-            </MainShoppingContainer>
-            <SubscribeBar />
-        </>
+        checkToken() ?
+            <>
+                <MainShoppingContainer>
+                    <MainShoppingContainerBody>
+                        <MainAdsView />
+                        <OffersBoard />
+                        <ProductGallery filter={true} group={1} />
+                        <ProductGallery header={"Consumer electronics and gadgets"} group={0} />
+                        <ContactUsBox />
+                        <RecommendedItems />
+                        <ExtraServices />
+                        <SuppliersList />
+                    </MainShoppingContainerBody>
+                </MainShoppingContainer>
+                <SubscribeBar />
+            </> : <Navigate to={"/"} />
     )
 }

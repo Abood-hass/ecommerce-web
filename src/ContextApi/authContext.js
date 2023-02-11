@@ -1,7 +1,9 @@
-import { useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 
-export default function AuthContext() {
+export const AuthCont = createContext()
+
+export default function AuthContext(props) {
     const initalToken = { token: localStorage.getItem("token") || "" }
 
     const ACTIONSKEYS = {
@@ -34,6 +36,10 @@ export default function AuthContext() {
     const resetToken = (userToken) => dispatch({ type: ACTIONSKEYS.REOMVE, payload: userToken })
     const checkToken = () => state.token
 
-    return { setToken, resetToken, checkToken }
+    return <AuthCont.Provider value={{ setToken, resetToken, checkToken }}>
+        {props.children}
+    </AuthCont.Provider >
+
+
 }
 
